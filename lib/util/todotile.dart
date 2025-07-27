@@ -4,14 +4,14 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 class TodoTile extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
-  final String taskpriority;// Priority for the task
   Function(bool?)? onChanged;
   Function(BuildContext)? deleteFunction;
+
 
   TodoTile({super.key,
     required this.taskName,
     required this.taskCompleted,
-    required this.taskpriority, //Accept priority here
+
     required this.onChanged,
     required this.deleteFunction});
 
@@ -19,6 +19,7 @@ class TodoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0, left: 20,right: 20),
+      //Slidable option
       child: Slidable(
         endActionPane: ActionPane(motion: StretchMotion(),
             children: [
@@ -27,20 +28,22 @@ class TodoTile extends StatelessWidget {
                 backgroundColor: Colors.red,
                 borderRadius: BorderRadius.circular(10),)
             ]),
+        //TextField of user input
         child: Container(
-          decoration: BoxDecoration(color: Colors.yellow[200],
+          decoration: BoxDecoration(color: Colors.purple[300],
               borderRadius: BorderRadius.circular(10)),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
+                //checkbox
                 Checkbox(value: taskCompleted,
                   onChanged: onChanged,
                   activeColor: Colors.black,),
                 Text(taskName,
                   style: TextStyle(color: Colors.black,
                       decoration: taskCompleted? TextDecoration.lineThrough: TextDecoration.none),),
-                Text("Priority : $taskpriority")
+
               ],
             ),
           ),

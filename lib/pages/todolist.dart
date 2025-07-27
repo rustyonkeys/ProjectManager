@@ -14,15 +14,16 @@ class _HomePageState extends State<HomePage> {
 
   //text controller
   final econtroller = TextEditingController();
-  String? _selectedPriority;
+
+
 
 
   //List of tasks
   //[TaskName,IsCompleted,Priority]
   List toDoList =[
-    ["Make an app",true,"High"],
-    ["Deploy website", false,"Low"],
-    ["Bring vegetables", false,"Medium"],
+    ["Make an app",true],
+    ["Deploy website", false],
+    ["Bring vegetables", false],
   ];
 
   //checked was tapped
@@ -35,9 +36,8 @@ class _HomePageState extends State<HomePage> {
   //save new task
   void saveNewTask(){
     setState(() {
-      toDoList.add([econtroller.text,false, _selectedPriority ?? "Medium"]);//If no option is selected then it will be automatically medium
+      toDoList.add([econtroller.text,false]);//If no option is selected then it will be automatically medium
       econtroller.clear();   // everytime new task is created old task name lies there on alert dialog box
-      _selectedPriority = 'Medium'; //
     });
     Navigator.of(context).pop();
   }
@@ -59,20 +59,14 @@ class _HomePageState extends State<HomePage> {
       return DialogBox(
         controller: econtroller,
         onSave: saveNewTask,
-        onCancel:() => Navigator.of(context).pop(),//to remove go back to home page
-        selectedPriority: _selectedPriority,
-        onPriorityChanged: (String? newPriority){
-          setState(() {
-            _selectedPriority = newPriority;
-          });
+        onCancel:() => Navigator.of(context).pop(),);//to remove go back to home page
         }
       );
-    },);
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.purple[200],
         floatingActionButton: FloatingActionButton(child:Icon(Icons.add,color: Colors.black,),onPressed: createNewTask,
           shape: CircleBorder(),
           elevation: 10,
@@ -80,6 +74,12 @@ class _HomePageState extends State<HomePage> {
         body:
         Column(
           children: [
+            SizedBox(height: 60,),
+            Text("My Tasks",
+            style: TextStyle(color: Colors.black,
+            fontSize: 35,
+            fontWeight: FontWeight.bold,),),
+            SizedBox(height: 10),
             TaskProgressBar(
               totalTask: toDoList.length,
               totalCompletedTask: toDoList.where((task) => task[1] == true).length,
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                   return TodoTile(
                     taskName: toDoList[index][0], //Name of the task
                     taskCompleted: toDoList[index][1], //task completed
-                    taskpriority: toDoList[index][2], // priority
+
                     onChanged: (value) => checkBoxChanged(value,index),
                     deleteFunction: (context) => deleteTask(index),);
                 },),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/util/MyButton.dart';  // Assuming this is a custom button widget
-import 'package:taskmanager/util/category.dart';  // Category dropdown widget
 
 class DialogBox extends StatefulWidget {
   final TextEditingController controller;
@@ -19,19 +18,13 @@ class DialogBox extends StatefulWidget {
 }
 
 class _DialogBoxState extends State<DialogBox> {
-  String? selectedOption;  // Holds the selected option for the dropdown
-
-  // Update the selected priority option
-  void onCategoryChanged(String? newPriority) {
-    setState(() {
-      selectedOption = newPriority;  // Update the selected option when the user selects a new priority
-    });
-  }
-
+  String? selectedPriority; //state variable to track the selected value
   @override
   Widget build(BuildContext context) {
+    List<String> priority = ["High", "Low", "Medium"];
+
     return AlertDialog(
-      backgroundColor: Colors.yellow[200],  // Set background color of the dialog
+      backgroundColor: Colors.white,  // Set background color of the dialog
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.zero,  // No border radius for the dialog
       ),
@@ -49,12 +42,21 @@ class _DialogBoxState extends State<DialogBox> {
                     ),
                   ),
                 ),
-
-                Category(
-                  selectedItem: selectedOption,  // Pass the selected option for the dropdown
-                  onChanged: onCategoryChanged,  // Notify the parent when the selection changes
-                ),
-
+            DropdownButton(
+              value: selectedPriority,
+              hint: Text("select the priority"),
+              onChanged: (String? newPriority) {
+                setState(() {
+                  selectedPriority = newPriority; //update the state
+                });
+              },
+              items: priority.map<DropdownMenuItem<String>>((String value){
+              return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value));
+              }).toList(),
+              isExpanded: true,
+            ),
             SizedBox(height: 20),  // Add some spacing below the Row
 
             // Buttons: Save and Cancel
