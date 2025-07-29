@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:taskmanager/pages/todolist.dart';
+import 'package:taskmanager/pages/homepage.dart';
+// import 'package:taskmanager/pages/todolist.dart';
 
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //theme: ThemeData(primarySwatch: Colors.amber),
-      home: HomePage(),
+      home: FrontPage(),
     );
   }
 }
