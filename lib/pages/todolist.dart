@@ -71,10 +71,18 @@ class _HomePageState extends State<HomePage> {
           shape: CircleBorder(),
           elevation: 10,
         ),
-        body:
-        Column(
+        body:Column(
           children: [
-            SizedBox(height: 60,),
+            SizedBox(height: 30,),
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(onPressed: () {
+                Navigator.pop(context);},
+                icon: Icon(Icons.chevron_left_outlined,
+                size: 40,),
+              color: Colors.black,)
+            ),
+            SizedBox(height: 40,),
             Text("My Tasks",
             style: TextStyle(color: Colors.black,
             fontSize: 35,
