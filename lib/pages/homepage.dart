@@ -17,20 +17,23 @@ class FrontPage extends StatelessWidget {
             pinned: true,
             leading: IconButton(
               icon: Icon(Icons.menu,
-            color: Colors.black),
+            color: Colors.white),
             onPressed: () {
               _scaffoldkey.currentState?.openDrawer();
             },),
             title: Text("Welcome to TaskManager",
-            style: TextStyle(color: Colors.black),),
+            style: TextStyle(color: Colors.white),),
             expandedHeight: 300,
-            backgroundColor: Color(0xFFF1F1EF),
+            backgroundColor: Colors.black54,
             flexibleSpace: FlexibleSpaceBar(
+              background: Container(
+                color: Colors.black87,
+              ),
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 80, left:20),
                 child: Text("Manage Your Tasks!!",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),),
@@ -59,7 +62,65 @@ class FrontPage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  color: Color(0xffF1F1EF),
+                  color: Colors.black,
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(width: 70,),
+                        Column(
+                          children: [
+                            SizedBox(height: 40,),
+                          Container(
+                            child: Center(
+                              child: Text("Make an app",
+                              style: TextStyle(color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,),),
+                            ),
+                          ),
+                        SizedBox(height: 15,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                            child: Text("Priority:high",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20
+                            ),),
+                          ),
+                            SizedBox(width: 36,),
+                            Container(
+                              child: Text("Priority:high",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20
+                                ),),
+                            ),
+
+                        ])
+                          ],),
+                          SizedBox(width: 20,),
+                          IconButton(onPressed: () {},
+                              icon: Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: Colors.grey,
+                              ))
+                      ]),],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  color: Colors.black,
                   height: 200,
                 ),
               ),
@@ -84,7 +145,7 @@ class FrontPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
                   color: Colors.deepPurple[300],
-                  height: 400,
+                  height: 200,
                 ),
               ),
             ),
