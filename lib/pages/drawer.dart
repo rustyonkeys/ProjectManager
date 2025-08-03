@@ -3,6 +3,7 @@
 // You can then call openDrawer() on that key from anywhere in the widget tree.
 
 import "package:flutter/material.dart";
+import "package:taskmanager/pages/addtask.dart";
 import "package:taskmanager/pages/todolist.dart";
 
 class DrawerWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class DrawerWidget extends StatelessWidget {
       //This attaches the key to your Scaffold.
       // key: _scaffoldkey,  //Identifies widgets; useful for tracking and accessing state.
 
-        backgroundColor: Color(0xFF787774),
+        backgroundColor: Colors.black54,
         child: ListView(
           children: [
             DrawerHeader(
@@ -27,31 +28,35 @@ class DrawerWidget extends StatelessWidget {
             ListTile(
               leading: IconButton(
                 icon: Icon(Icons.add,
-                  color: Colors.black,),
-                onPressed: () {  },
+                  color: Colors.white,),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                      MaterialPageRoute(builder: (context) => AddTask()));
+                },
               ),
               title: Text("Add a task",
-                style: TextStyle(color: Colors.black),),
+                style: TextStyle(color: Colors.white),),
             ),
             ListTile(
               leading: IconButton(
                 icon: Icon(Icons.task,
-                  color: Colors.black,),
+                  color: Colors.white,),
                 onPressed:() {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                 },
               ),
               title: Text("Your tasks",
-                style: TextStyle(color: Colors.black),),
+                style: TextStyle(color: Colors.white),),
             ),
             ListTile(
               leading: IconButton(
                 icon: Icon(Icons.settings,
-                  color: Colors.black,),
+                  color: Colors.white,),
                 onPressed: () {  },
               ),
               title: Text("settings",
-                style: TextStyle(color: Colors.black),),
+                style: TextStyle(color: Colors.white),),
             ),
           ],
         ),

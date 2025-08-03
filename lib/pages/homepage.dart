@@ -30,7 +30,7 @@ class FrontPage extends StatelessWidget {
                 color: Colors.black87,
               ),
               title: Padding(
-                padding: const EdgeInsets.only(bottom: 80, left:20),
+                padding: const EdgeInsets.only(bottom: 80),
                 child: Text("Manage Your Tasks!!",
                 style: TextStyle(
                   color: Colors.white,
@@ -56,6 +56,7 @@ class FrontPage extends StatelessWidget {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
@@ -68,15 +69,15 @@ class FrontPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SizedBox(width: 70,),
+                          SizedBox(width: 50,),
                         Column(
                           children: [
-                            SizedBox(height: 40,),
+                            SizedBox(height: 30,),
                           Container(
                             child: Center(
                               child: Text("Make an app",
                               style: TextStyle(color: Colors.white,
-                              fontSize: 30,
+                              fontSize: 28,
                               fontWeight: FontWeight.bold,),),
                             ),
                           ),
@@ -91,7 +92,7 @@ class FrontPage extends StatelessWidget {
                               fontSize: 20
                             ),),
                           ),
-                            SizedBox(width: 36,),
+                            SizedBox(width: 20,),
                             Container(
                               child: Text("Priority:high",
                                 style: TextStyle(
@@ -116,40 +117,237 @@ class FrontPage extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
                   color: Colors.black,
-                  height: 200,
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Row(
+                          children: [
+                            SizedBox(width: 50,),
+                            Column(
+                              children: [
+                                SizedBox(height: 30,),
+                                Container(
+                                  child: Center(
+                                    child: Text("Make an app",
+                                      style: TextStyle(color: Colors.white,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,),),
+                                  ),
+                                ),
+                                SizedBox(height: 15,),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+                                      SizedBox(width: 20,),
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+
+                                    ])
+                              ],),
+                            SizedBox(width: 20,),
+                            IconButton(onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  color: Colors.grey,
+                                ))
+                          ]),],
+                  ),
                 ),
               ),
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  color: Colors.deepPurple[300],
-                  height: 200,
+                  color: Colors.black,
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Row(
+                          children: [
+                            SizedBox(width: 50,),
+                            Column(
+                              children: [
+                                SizedBox(height: 30,),
+                                Container(
+                                  child: Center(
+                                    child: Text("Make an app",
+                                      style: TextStyle(color: Colors.white,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,),),
+                                  ),
+                                ),
+                                SizedBox(height: 15,),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+                                      SizedBox(width: 20,),
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+
+                                    ])
+                              ],),
+                            SizedBox(width: 20,),
+                            IconButton(onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  color: Colors.grey,
+                                ))
+                          ]),],
+                  ),
                 ),
               ),
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  color: Colors.deepPurple[300],
-                  height: 200,
+                  color: Colors.black,
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Row(
+                          children: [
+                            SizedBox(width: 50,),
+                            Column(
+                              children: [
+                                SizedBox(height: 30,),
+                                Container(
+                                  child: Center(
+                                    child: Text("Make an app",
+                                      style: TextStyle(color: Colors.white,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,),),
+                                  ),
+                                ),
+                                SizedBox(height: 15,),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+                                      SizedBox(width: 20,),
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+
+                                    ])
+                              ],),
+                            SizedBox(width: 20,),
+                            IconButton(onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  color: Colors.grey,
+                                ))
+                          ]),],
+                  ),
                 ),
               ),
             ),
           ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  color: Colors.black,
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Row(
+                          children: [
+                            SizedBox(width: 50,),
+                            Column(
+                              children: [
+                                SizedBox(height: 30,),
+                                Container(
+                                  child: Center(
+                                    child: Text("Make an app",
+                                      style: TextStyle(color: Colors.white,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,),),
+                                  ),
+                                ),
+                                SizedBox(height: 15,),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+                                      SizedBox(width: 20,),
+                                      Container(
+                                        child: Text("Priority:high",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20
+                                          ),),
+                                      ),
+
+                                    ])
+                              ],),
+                            SizedBox(width: 20,),
+                            IconButton(onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  color: Colors.grey,
+                                ))
+                          ]),],
+                  ),
+                ),
+              ),
+            ),
+          ),
+
         ],
       ),
     );
