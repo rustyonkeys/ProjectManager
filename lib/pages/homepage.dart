@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:taskmanager/pages/drawer.dart";
+import 'package:google_fonts/google_fonts.dart';
 
 class FrontPage extends StatelessWidget {
    FrontPage({super.key});
@@ -22,17 +23,17 @@ class FrontPage extends StatelessWidget {
               _scaffoldkey.currentState?.openDrawer();
             },),
             title: Text("Welcome to TaskManager",
-            style: TextStyle(color: Colors.white),),
-            expandedHeight: 300,
+            style: GoogleFonts.bebasNeue(color: Colors.white),),
+            expandedHeight: 250,
             backgroundColor: Colors.black54,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 color: Colors.black87,
               ),
               title: Padding(
-                padding: const EdgeInsets.only(bottom: 80),
+                padding: const EdgeInsets.only(bottom: 50),
                 child: Text("Manage Your Tasks!!",
-                style: TextStyle(
+                style: GoogleFonts.bebasNeue(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -47,7 +48,7 @@ class FrontPage extends StatelessWidget {
               child: ClipRRect(
                 child: Container(
                   child: Text("To Do Tasks",
-                  style: TextStyle(
+                  style: GoogleFonts.bebasNeue(
                     color: Colors.black,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -76,8 +77,8 @@ class FrontPage extends StatelessWidget {
                           Container(
                             child: Center(
                               child: Text("Make an app",
-                              style: TextStyle(color: Colors.white,
-                              fontSize: 28,
+                              style: GoogleFonts.bebasNeue(color: Colors.white,
+                              fontSize: 40,
                               fontWeight: FontWeight.bold,),),
                             ),
                           ),
@@ -87,7 +88,7 @@ class FrontPage extends StatelessWidget {
                           children: [
                             Container(
                             child: Text("Priority:high",
-                            style: TextStyle(
+                            style: GoogleFonts.bebasNeue(
                               color: Colors.white,
                               fontSize: 20
                             ),),
@@ -95,7 +96,7 @@ class FrontPage extends StatelessWidget {
                             SizedBox(width: 20,),
                             Container(
                               child: Text("Priority:high",
-                                style: TextStyle(
+                                style: GoogleFonts.bebasNeue(
                                     color: Colors.white,
                                     fontSize: 20
                                 ),),
@@ -134,7 +135,7 @@ class FrontPage extends StatelessWidget {
                                 Container(
                                   child: Center(
                                     child: Text("Make an app",
-                                      style: TextStyle(color: Colors.white,
+                                      style: GoogleFonts.bebasNeue(color: Colors.white,
                                         fontSize: 28,
                                         fontWeight: FontWeight.bold,),),
                                   ),
@@ -145,7 +146,7 @@ class FrontPage extends StatelessWidget {
                                     children: [
                                       Container(
                                         child: Text("Priority:high",
-                                          style: TextStyle(
+                                          style: GoogleFonts.bebasNeue(
                                               color: Colors.white,
                                               fontSize: 20
                                           ),),
@@ -153,7 +154,7 @@ class FrontPage extends StatelessWidget {
                                       SizedBox(width: 20,),
                                       Container(
                                         child: Text("Priority:high",
-                                          style: TextStyle(
+                                          style: GoogleFonts.bebasNeue(
                                               color: Colors.white,
                                               fontSize: 20
                                           ),),
@@ -192,7 +193,7 @@ class FrontPage extends StatelessWidget {
                                 Container(
                                   child: Center(
                                     child: Text("Make an app",
-                                      style: TextStyle(color: Colors.white,
+                                      style: GoogleFonts.bebasNeue(color: Colors.white,
                                         fontSize: 28,
                                         fontWeight: FontWeight.bold,),),
                                   ),
@@ -203,7 +204,7 @@ class FrontPage extends StatelessWidget {
                                     children: [
                                       Container(
                                         child: Text("Priority:high",
-                                          style: TextStyle(
+                                          style: GoogleFonts.bebasNeue(
                                               color: Colors.white,
                                               fontSize: 20
                                           ),),
@@ -211,7 +212,7 @@ class FrontPage extends StatelessWidget {
                                       SizedBox(width: 20,),
                                       Container(
                                         child: Text("Priority:high",
-                                          style: TextStyle(
+                                          style: GoogleFonts.bebasNeue(
                                               color: Colors.white,
                                               fontSize: 20
                                           ),),

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:google_fonts/google_fonts.dart';
 
 class AddTask extends StatefulWidget {
   const AddTask({super.key});
@@ -36,7 +37,7 @@ class _AddTaskState extends State<AddTask> {
               ),
               SizedBox(height: 40,),
               Text("Add your Tasks",
-                style: TextStyle(color: Colors.black,
+                style: GoogleFonts.bebasNeue(color: Colors.black,
                   fontSize: 35,
                   fontWeight: FontWeight.bold,),),
               SizedBox(height: 20,),
@@ -71,7 +72,7 @@ class _AddTaskState extends State<AddTask> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 18),
                   child: Text("Add subtasks:",
-                  style: TextStyle(
+                  style: GoogleFonts.bebasNeue(
                       fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 23),),
@@ -99,7 +100,7 @@ class _AddTaskState extends State<AddTask> {
               SizedBox(height: 100,),
               ElevatedButton(onPressed: addtask,
                   child:Text("Add a new subtask",
-                  style: TextStyle(
+                  style: GoogleFonts.bebasNeue(
                     color: Colors.black
                   ),))
 
