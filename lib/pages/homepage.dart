@@ -126,7 +126,7 @@ class FrontPage extends StatelessWidget {
                                 onPressed:() {Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => ViewTasks()),
+                                        builder: (context) => ViewTasks(taskID: tasks[index].id)),
                                 );
                                   },
                                 icon: Icon(
