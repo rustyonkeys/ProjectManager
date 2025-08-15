@@ -85,7 +85,7 @@ class _AddTaskState extends State<AddTask> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)),
-                    hintText: "Add the title of your task",
+                    hintText: "Title in not more than 3 words",
                   ),
                 ),
               ),
