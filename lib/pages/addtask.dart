@@ -24,9 +24,12 @@ class _AddTaskState extends State<AddTask> {
   void saveTask() async {
     String title = titleController.text.trim();
     String description = descriptionController.text.trim();
-    List<String> subtasks = subControllers
-        .map((controller) => controller.text.trim())
-        .where((text) => text.isNotEmpty)
+    List<Map<String,dynamic>> subtasks = subControllers
+        .map((controller) => {
+      'title': controller.text.trim(),
+      'isDone': false,
+    })
+        .where((subtask) => (subtask['title'] as String).isNotEmpty)
         .toList();
 
     if (title.isEmpty) {

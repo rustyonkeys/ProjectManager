@@ -6,7 +6,7 @@ class FirestoneServices{
   final CollectionReference tasks = FirebaseFirestore.instance.collection('tasks');
 
   //Create: add a new note
-  Future<void> addTask(String title, String description, List<String> subtasks) async{
+  Future<void> addTask(String title, String description, List<Map<String, dynamic>> subtasks) async{
     await tasks.add({
       'title': title,
       'description': description,
@@ -21,7 +21,7 @@ class FirestoneServices{
   }
 
   //Update: update the notes given a doc id
-  Future<void> updateTask(String docId, String title, String description, List<String> subtasks) async{
+  Future<void> updateTask(String docId, String title, String description, List<Map<String,dynamic>> subtasks) async{
     await tasks.doc(docId).update({
       'title': title,
       'description': description,
