@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanager/util/circular_linear_graph.dart';
+import 'package:intl/intl.dart';
 
 class ViewTasks extends StatelessWidget {
   final String taskID;
@@ -10,9 +11,6 @@ class ViewTasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Task Details", style: GoogleFonts.bebasNeue(fontSize: 24)),
-      ),
       body: StreamBuilder<DocumentSnapshot>(
         stream: FirebaseFirestore.instance.collection('tasks').doc(taskID).snapshots(),
         builder: (context, snapshot) {
@@ -23,6 +21,12 @@ class ViewTasks extends StatelessWidget {
           final title = taskData['title'] ?? 'No Title';
           final description = taskData['description'] ?? 'No Description';
           final subtasks = List<Map<String, dynamic>>.from(taskData['subtasks'] ?? []);
+          final Timestamp? timestamp = taskData['timestamp'];
+          String formattedDate = "";
+          if (timestamp != null) {
+            DateTime date = timestamp.toDate();
+            formattedDate = "${date.day} ${DateFormat('MMM').format(date)}"; // e.g. "22 Aug"
+          }
 
           // Calculate completion percentage
           final int total = subtasks.length;
@@ -35,6 +39,40 @@ class ViewTasks extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 30),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.chevron_left_outlined, size: 40),
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "Task Details",
+                        style: GoogleFonts.bebasNeue(
+                          color: Colors.black,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      Text(
+                        formattedDate,
+                        style: GoogleFonts.bebasNeue(
+                          color: Colors.blueGrey[400],
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                  ]),
+
+                SizedBox(height: 30),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: Container(
@@ -47,7 +85,7 @@ class ViewTasks extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CircularGraph(percent: progress),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 25),
                           Flexible(
                             child: Text(
                               title,
@@ -66,14 +104,20 @@ class ViewTasks extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  description,
-                  style: const TextStyle(color: Colors.grey, fontSize: 20),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text(
+                    description,
+                    style: const TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  "Subtasks",
-                  style: GoogleFonts.bebasNeue(color: Colors.black, fontSize: 24),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Subtasks",
+                    style: GoogleFonts.bebasNeue(color: Colors.black, fontSize: 24),
+                  ),
                 ),
                 const SizedBox(height: 10),
                 Expanded(
