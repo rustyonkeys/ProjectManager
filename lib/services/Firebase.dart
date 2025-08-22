@@ -20,13 +20,20 @@ class FirestoneServices{
     return tasks.orderBy('timestamp', descending: true).snapshots();
   }
 
-  //Update: update the notes given a doc id
+  //Update(task fully): update the notes given a doc id
   Future<void> updateTask(String docId, String title, String description, List<Map<String,dynamic>> subtasks) async{
     await tasks.doc(docId).update({
       'title': title,
       'description': description,
       'subtasks': subtasks,
       'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
+  //Update just the subtask for the given task
+  Future<void> updateSubtasks(String docID, List<Map<String, dynamic>> subtasks) async {
+    await tasks.doc(docID).update({
+      'subtasks' : subtasks,
     });
   }
 

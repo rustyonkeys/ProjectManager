@@ -4,6 +4,7 @@
 
 import "package:flutter/material.dart";
 import "package:taskmanager/pages/addtask.dart";
+import "package:taskmanager/pages/graph.dart";
 import "package:taskmanager/pages/todolist.dart";
 
 class DrawerWidget extends StatelessWidget {
@@ -47,6 +48,17 @@ class DrawerWidget extends StatelessWidget {
                 },
               ),
               title: Text("Your tasks",
+                style: TextStyle(color: Colors.white),),
+            ),
+            ListTile(
+              leading: IconButton(
+                icon: Icon(Icons.auto_graph_sharp,
+                  color: Colors.white,),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => GraphPage(),));
+                },
+              ),
+              title: Text("Graph Page",
                 style: TextStyle(color: Colors.white),),
             ),
             ListTile(
