@@ -56,6 +56,7 @@ class _AddTaskState extends State<AddTask> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       body: SingleChildScrollView(
         child: Container(
           child: Column(

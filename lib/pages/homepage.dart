@@ -10,6 +10,7 @@ class FrontPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       key: _scaffoldkey,
       drawer: DrawerWidget(),
       body: CustomScrollView(
@@ -23,9 +24,8 @@ class FrontPage extends StatelessWidget {
               },
             ),
             title: Text(
-              "Welcome to TaskManager",
-              style: GoogleFonts.bebasNeue(color: Colors.white),
-            ),
+                "Welcome  to  ProjectManager",
+                style: GoogleFonts.bebasNeue(color: Colors.white),),
             expandedHeight: 250,
             backgroundColor: Colors.black54,
             flexibleSpace: FlexibleSpaceBar(
@@ -35,7 +35,7 @@ class FrontPage extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 50),
                 child: Text(
-                  "Manage Your Tasks!!",
+                  "Manage Your Projects!!",
                   style: GoogleFonts.bebasNeue(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -47,11 +47,11 @@ class FrontPage extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(top: 30.0, bottom: 15, left: 35),
               child: ClipRRect(
                 child: Container(
                   child: Text(
-                    "To Do Tasks",
+                    "Upcoming Projects",
                     style: GoogleFonts.bebasNeue(
                       color: Colors.black,
                       fontSize: 35,
@@ -90,10 +90,18 @@ class FrontPage extends StatelessWidget {
 
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
                         child: Container(
-                          color: Colors.black,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [BoxShadow(
+                              color: Colors.blueGrey,
+                              blurRadius: 4,
+                              spreadRadius: 1,
+                              offset: Offset(4.0,4.0)
+                            )
+                            ]
+                          ),
                           height: 150,
                           child: Row(
                             children: [
@@ -137,7 +145,7 @@ class FrontPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
+
                     );
                   },
                   childCount: tasks.length,

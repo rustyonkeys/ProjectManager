@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:taskmanager/firebase_options.dart';
 import 'package:taskmanager/pages/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:taskmanager/pages/todolist.dart';
 import 'package:taskmanager/util/circular_linear_graph.dart';
 
 

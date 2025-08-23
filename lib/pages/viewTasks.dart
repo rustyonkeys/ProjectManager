@@ -11,6 +11,7 @@ class ViewTasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       body: StreamBuilder<DocumentSnapshot>(
         stream: FirebaseFirestore.instance.collection('tasks').doc(taskID).snapshots(),
         builder: (context, snapshot) {
@@ -73,12 +74,22 @@ class ViewTasks extends StatelessWidget {
                   ]),
 
                 SizedBox(height: 30),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Container(
+
+                  Container(
                     height: 230,
                     width: double.infinity,
-                    color: Colors.black,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(4.0,4.0),
+                          blurRadius: 4,
+                          color: Colors.blueGrey,
+                          spreadRadius: 1
+                        )
+                      ]
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
@@ -102,13 +113,14 @@ class ViewTasks extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
+
                 const SizedBox(height: 20),
                 Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: Text(
                     description,
-                    style: const TextStyle(color: Colors.grey, fontSize: 20),
+                    style: TextStyle(color: Colors.grey.shade700, fontSize: 23,
+                    fontWeight: FontWeight.w700),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -195,6 +207,7 @@ class ViewTasks extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
+
                         backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
                       ),
